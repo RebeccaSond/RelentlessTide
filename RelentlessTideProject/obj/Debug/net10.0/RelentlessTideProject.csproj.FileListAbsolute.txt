@@ -1,0 +1,15 @@
+C:\Users\hanna\OneDrive\Desktop\BYU-Coding\projects\RelentlessTide\RelentlessTideProject\bin\Debug\net10.0\RelentlessTideProject.exe
+C:\Users\hanna\OneDrive\Desktop\BYU-Coding\projects\RelentlessTide\RelentlessTideProject\bin\Debug\net10.0\RelentlessTideProject.deps.json
+C:\Users\hanna\OneDrive\Desktop\BYU-Coding\projects\RelentlessTide\RelentlessTideProject\bin\Debug\net10.0\RelentlessTideProject.runtimeconfig.json
+C:\Users\hanna\OneDrive\Desktop\BYU-Coding\projects\RelentlessTide\RelentlessTideProject\bin\Debug\net10.0\RelentlessTideProject.dll
+C:\Users\hanna\OneDrive\Desktop\BYU-Coding\projects\RelentlessTide\RelentlessTideProject\bin\Debug\net10.0\RelentlessTideProject.pdb
+C:\Users\hanna\OneDrive\Desktop\BYU-Coding\projects\RelentlessTide\RelentlessTideProject\obj\Debug\net10.0\RelentlessTideProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hanna\OneDrive\Desktop\BYU-Coding\projects\RelentlessTide\RelentlessTideProject\obj\Debug\net10.0\RelentlessTideProject.AssemblyInfoInputs.cache
+C:\Users\hanna\OneDrive\Desktop\BYU-Coding\projects\RelentlessTide\RelentlessTideProject\obj\Debug\net10.0\RelentlessTideProject.AssemblyInfo.cs
+C:\Users\hanna\OneDrive\Desktop\BYU-Coding\projects\RelentlessTide\RelentlessTideProject\obj\Debug\net10.0\RelentlessTideProject.csproj.CoreCompileInputs.cache
+C:\Users\hanna\OneDrive\Desktop\BYU-Coding\projects\RelentlessTide\RelentlessTideProject\obj\Debug\net10.0\RelentlessTideProject.sourcelink.json
+C:\Users\hanna\OneDrive\Desktop\BYU-Coding\projects\RelentlessTide\RelentlessTideProject\obj\Debug\net10.0\RelentlessTideProject.dll
+C:\Users\hanna\OneDrive\Desktop\BYU-Coding\projects\RelentlessTide\RelentlessTideProject\obj\Debug\net10.0\refint\RelentlessTideProject.dll
+C:\Users\hanna\OneDrive\Desktop\BYU-Coding\projects\RelentlessTide\RelentlessTideProject\obj\Debug\net10.0\RelentlessTideProject.pdb
+C:\Users\hanna\OneDrive\Desktop\BYU-Coding\projects\RelentlessTide\RelentlessTideProject\obj\Debug\net10.0\RelentlessTideProject.genruntimeconfig.cache
+C:\Users\hanna\OneDrive\Desktop\BYU-Coding\projects\RelentlessTide\RelentlessTideProject\obj\Debug\net10.0\ref\RelentlessTideProject.dll
