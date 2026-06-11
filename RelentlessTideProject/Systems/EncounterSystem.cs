@@ -1,8 +1,9 @@
+// This is the function that helps the player raid the buildings. They can find items, find nothing, or get attacked by an enemy
 public static class EncounterSystem
 {
     public static void TriggerRandomEvent(Player player)
     {
-        int roll = Random.Shared.Next(130);
+        int roll = Random.Shared.Next(150);
 
         if (roll < 40)
         {
@@ -26,6 +27,12 @@ public static class EncounterSystem
             Console.WriteLine("You found supplies!");
             player.Stats.Defense = Math.Min(100, player.Stats.Defense + 5);
             Console.WriteLine("Your attack increased by 5!");
+        }
+        else if (roll < 130)
+        {
+            Console.WriteLine("You found supplies!");
+            player.Stats.Health = Math.Min(100, player.Stats.Health + 5);
+            Console.WriteLine("Your health increased by 5!");
         }
         else
         {

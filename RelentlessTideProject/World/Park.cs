@@ -4,13 +4,13 @@ public class AlleganyStatePark : Building
     private static bool parkVisited = false;
     public AlleganyStatePark() : base("Allegany State Park") { }
 
-    public override void Enter(Player player)
+    public override BuildingResult Enter(Player player)
     {
 
         if (parkVisited)
         {
             Console.WriteLine("\nYou would be a fool going back there again... Not without something strong to defend yourself with...");
-            return;
+            return BuildingResult.Leave;
         }
 
         parkVisited = true;
@@ -25,6 +25,6 @@ public class AlleganyStatePark : Building
 
         Console.WriteLine("You survived the park... barely.");
         Thread.Sleep(500);
-        return;
+        return BuildingResult.Leave;
     }
 }

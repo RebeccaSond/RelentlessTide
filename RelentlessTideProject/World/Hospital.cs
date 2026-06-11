@@ -4,7 +4,7 @@ public class Hospital : Building
     private bool pharmacySearched = false;
     public Hospital() : base("Hospital") { }
 
-    public override void Enter(Player player)
+    public override BuildingResult Enter(Player player)
     {
         Console.WriteLine("\nYou enter the hospital. It’s dark and silent...");
 
@@ -26,7 +26,6 @@ public class Hospital : Building
             {
                 case "1":
                     SearchRooms(player);
-                    pharmacySearched = true;
                     break;
 
                 case "2":
@@ -56,9 +55,16 @@ public class Hospital : Building
         if (player.Stats.Health > 0)
         {
             Console.WriteLine("\nYou leave the hospital...");
+            return BuildingResult.Leave;
+        }
+        else
+        {
+            Console.WriteLine("\nGAME OVER\n");
+            return BuildingResult.PlayerDied;
         }
     }
 
+    // Function for player searching patient rooms
     private void SearchRooms(Player player)
     {
         Console.WriteLine("\nYou search the patient rooms...");
@@ -68,27 +74,31 @@ public class Hospital : Building
         Console.ReadLine();
     }
 
+    // Function for player searching pharmacy
     private void Pharmacy(Player player)
     {
 
         if (pharmacySearched)
         {
-            Console.WriteLine("You took all that you could in the Pharmacy. There were no more supplies left.");
+            Console.WriteLine("\nYou took all that you could in the Pharmacy. There were no more supplies left.");
             Console.WriteLine("\nPress ENTER to continue...");
             Console.ReadLine();
+            return;
         }
 
+        pharmacySearched = true;
         Console.WriteLine("\nYou enter the pharmacy...");
 
-        Console.WriteLine("You find painkillers... Your attack increaed by 2.\n");
+        Console.WriteLine("You find painkillers... Your attack increased by 2.");
         player.Stats.Attack += 2;
         Console.WriteLine("\nPress ENTER to continue...");
         Console.ReadLine();
     }
 
+    // Function for player entering waiting area
     private void Rest(Player player)
     {
-        Console.WriteLine("\nYou rest quietly... You feel healthier!\n");
+        Console.WriteLine("\nYou rest quietly... You feel healthier!");
         player.Stats.Health = Math.Min(100, player.Stats.Health + 10);
         Console.WriteLine("\nPress ENTER to continue...");
         Console.ReadLine();

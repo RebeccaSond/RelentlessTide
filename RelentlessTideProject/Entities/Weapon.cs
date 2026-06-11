@@ -1,9 +1,9 @@
-// Abstract requirment (still trying to figure out its purpose)
+// Abstract requirment: a grouped structure for all weapons in game
 public abstract class Weapon
 {
     public string Name { get; }
 
-    public int DamageAmount { get; protected set; }
+    public DamageValue Damage { get; protected set; }
 
     protected Weapon(string name)
     {
@@ -18,7 +18,11 @@ public class Hatchet : Weapon
 {
     public Hatchet() : base("Hatchet")
     {
-        DamageAmount = 30;
+        Damage = new DamageValue
+        {
+            Physical = 30,
+            Kind = DamageKind.Physical
+        };
     }
 
     public override void Use()
@@ -32,12 +36,16 @@ public class SpikedBaseballBat : Weapon
 {
     public SpikedBaseballBat() : base("Spiked Baseball Bat")
     {
-        DamageAmount = 23;
+        Damage = new DamageValue
+        {
+            Physical = 23,
+            Kind = DamageKind.Physical
+        };
     }
 
     public override void Use()
     {
-        Console.WriteLine("You swing with the spiked baseball bat");
+        Console.WriteLine("You swing with the spiked baseball bat!");
     }
 }
 
@@ -46,11 +54,15 @@ public class Shotgun : Weapon
 {
     public Shotgun() : base("Shotgun")
     {
-        DamageAmount = 15;
+        Damage = new DamageValue
+        {
+            Special = 20,
+            Kind = DamageKind.Special
+        };
     }
 
     public override void Use()
     {
-        Console.WriteLine("You fire the shotgun");
+        Console.WriteLine("You fire the shotgun!");
     }
 }

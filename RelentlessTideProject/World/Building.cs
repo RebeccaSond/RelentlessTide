@@ -1,3 +1,4 @@
+// Abstract requirment: a grouped structure for all building options
 public abstract class Building
 {
     public string Name { get; }
@@ -7,5 +8,12 @@ public abstract class Building
         Name = name;
     }
 
-    public abstract void Enter(Player player);
+    public abstract BuildingResult Enter(Player player);
+}
+
+public enum BuildingResult
+{
+    Leave,
+    FoundClue,
+    PlayerDied
 }

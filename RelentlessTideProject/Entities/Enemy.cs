@@ -9,6 +9,7 @@ public class Enemy
     {
         Name = name;
 
+        // This is all the enemies the player can get attacked by
         switch (name.ToLower())
         {
             case "rat":
@@ -16,25 +17,25 @@ public class Enemy
                 {
                     Health = 15,
                     Attack = 3,
-                    Defense = 1
+                    Defense = 2
                 };
                 break;
 
             case "seagent":
                 Stats = new CharacterStats
                 {
-                    Health = 50,
+                    Health = 80,
                     Attack = 8,
-                    Defense = 5
+                    Defense = 8
                 };
                 break;
 
             case "mutated creature":
                 Stats = new CharacterStats
                 {
-                    Health = 80,
-                    Attack = 50,
-                    Defense = 8
+                    Health = 100,
+                    Attack = 4,
+                    Defense = 1
                 };
                 break;
 
@@ -42,22 +43,38 @@ public class Enemy
                 Stats = new CharacterStats
                 {
                     Health = 50,
-                    Attack = 8,
-                    Defense = 5
+                    Attack = 45,
+                    Defense = 20
                 };
                 break;
         }
     }
 
     // This is the function connected to the enemy that helps take damage
-    public void TakeDamage(int damage)
+    public void TakeDamage(DamageValue damage)
     {
-        Stats.Health -= damage;
+        int finalDamage;
+
+        if (damage.Kind == DamageKind.Physical)
+        {
+            finalDamage = damage.Physical - Stats.Defense;
+            Console.WriteLine($"{Name} takes physical damage!");
+        }
+        else
+        {
+            finalDamage = damage.Special - Stats.Defense;
+            Console.WriteLine($"{Name} takes special damage!");
+        }
+
+        if (finalDamage < 1)
+            finalDamage = 1;
+
+        Stats.Health -= finalDamage;
 
         if (Stats.Health < 0)
             Stats.Health = 0;
 
-        Console.WriteLine($"{Name} takes {damage} damage!");
+        Console.WriteLine($"{Name} takes {finalDamage} damage!");
         Console.WriteLine($"{Name}'s Health: {Stats.Health}");
     }
 
@@ -68,10 +85,12 @@ public class Enemy
         int baseDamage = Stats.Attack;
         int damage = Random.Shared.Next(baseDamage - 3, baseDamage + 4);
 
-        // Critical hit chance
-        bool isCritical = Random.Shared.Next(1, 101) <= 10;
+        int roll = Random.Shared.Next(1, 101);
+
         // Missed hit chance
-        bool missedAttack = Random.Shared.Next(1, 101) <= 10;
+        bool missedAttack = roll <= 10;
+        // Critical hit chance
+        bool isCritical = roll >= 91;
 
         Console.WriteLine($"\n{Name} attacks!");
         Thread.Sleep(500);

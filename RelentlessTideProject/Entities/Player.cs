@@ -24,12 +24,25 @@ public class Player
     // This is the function connected to the player that helps attack enemies
     public void Attack(Enemy enemy)
     {
-        int damage = EquippedWeapon.DamageAmount;
+        DamageValue damageValue = EquippedWeapon.Damage;
 
-        // Critical hit chance
-        bool isCritical = Random.Shared.Next(1, 101) <= 10;
+        int damage;
+
+        if (damageValue.Kind == DamageKind.Physical)
+        {
+            damage = damageValue.Physical;
+        }
+        else
+        {
+            damage = damageValue.Special;
+        }
+
+        int roll = Random.Shared.Next(1, 101);
+
         // Missed hit chance
-        bool missedAttack = Random.Shared.Next(1, 101) <= 10;
+        bool missedAttack = roll <= 10;
+        // Critical hit chance
+        bool isCritical = roll >= 91;
 
         if (isCritical)
         {
@@ -48,7 +61,7 @@ public class Player
 
         Thread.Sleep(500);
         EquippedWeapon.Use();
-        enemy.TakeDamage(damage);
+        enemy.TakeDamage(damageValue);
         Thread.Sleep(500);
 
         if (isCritical)
@@ -74,6 +87,7 @@ public class Player
         Console.WriteLine($"{Name} HP: {Stats.Health}");
     }
 
+    // This is the function connected to the player that shows player stats when requested by the user
     public void ShowStats()
     {
         Console.WriteLine("\n----- PLAYER STATS -----");

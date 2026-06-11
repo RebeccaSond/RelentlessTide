@@ -3,7 +3,7 @@ public class LocalGroceryStore : Building
 {
     private bool backRoomSearched = false;
     public LocalGroceryStore() : base("Local Grocery Store") { }
-    public override void Enter(Player player)
+    public override BuildingResult Enter(Player player)
     {
         Console.WriteLine("\nYou decided to go to the local grocery store. There was plenty of food and accesories there for you to find.");
 
@@ -55,16 +55,26 @@ public class LocalGroceryStore : Building
         if (player.Stats.Health > 0)
         {
             Console.WriteLine("\nYou leave the grocery store...");
+            return BuildingResult.Leave;
+        }
+        else
+        {
+            Console.WriteLine("\nGAME OVER\n");
+            return BuildingResult.PlayerDied;
         }
     }
 
+    // Function for player searching shelves
     private void Shelves(Player player)
     {
         Console.WriteLine("\nYou check the shelves...");
 
         EncounterSystem.TriggerRandomEvent(player);
+        Console.WriteLine("\nPress ENTER to continue...");
+        Console.ReadLine();
     }
 
+    // Function for player searching the back room
     private void BackRoom(Player player)
     {
 
@@ -77,19 +87,18 @@ public class LocalGroceryStore : Building
 
         Console.WriteLine("\nYou search the back room...");
         Console.WriteLine($"As you search the dark room, you notice a rustle of movement from your side. You get your {player.EquippedWeapon.Name} ready as something suddenly launches at you!");
-        Console.WriteLine("\nPress ENTER to continue...");
-        Console.ReadLine();
 
         Enemy enemy = new Enemy("Rat");
         CombatSystem.Fight(player, enemy);
     }
 
+    // Function for player searching the register
     private void Register(Player player)
     {
         Console.WriteLine("\nYou check the register...");
-        Console.WriteLine("\nPress ENTER to continue...");
-        Console.ReadLine();
 
         EncounterSystem.TriggerRandomEvent(player);
+        Console.WriteLine("\nPress ENTER to continue...");
+        Console.ReadLine();
     }
 }
