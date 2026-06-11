@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RelentlessTideProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff62225f35f5fbdfbf38694fb34bc29fa680fcee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93c748aa82dc23015e99155f5c64eaa750851d9c")]
 [assembly: System.Reflection.AssemblyProductAttribute("RelentlessTideProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RelentlessTideProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
