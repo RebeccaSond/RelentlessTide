@@ -327,6 +327,8 @@ class Program
         string answer = Console.ReadLine();
 
         return answer.Trim().Equals("Yes",
+            StringComparison.OrdinalIgnoreCase) ||
+            answer.Trim().Equals("y",
             StringComparison.OrdinalIgnoreCase);
     }
 
